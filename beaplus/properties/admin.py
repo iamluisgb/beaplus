@@ -4,17 +4,12 @@
 from django.contrib import admin
 
 # Models
-from beaplus.properties.models import Property
+from beaplus.properties.models import Property, PropertyPhoto
 
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     """Property admin."""
-
-    """list_display = ('id', 'user', 'name', 'location', 'energy_certificate', 
-    'windows', 'ventilation', 'solar_protection', 'installations', 'ilumination',
-    'humidity', 'acoustic', 'illumination', 'air_quality', 'parkland', 'construction_materials',
-    'accessibility', 'quality_spaces', 'views', 'digitization')"""
     
     fieldsets = (
         ( None, {
@@ -35,4 +30,12 @@ class PropertyAdmin(admin.ModelAdmin):
             }),
     )
     
+    list_filter = ('created', 'modified')
+
+@admin.register(PropertyPhoto)
+class PropertyPhotoAdmin(admin.ModelAdmin):
+    """Property Photo admin."""
+
+    list_display = ('id', 'property', 'photo')
+    search_fields = ('property',)
     list_filter = ('created', 'modified')

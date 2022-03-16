@@ -49,3 +49,14 @@ class Property(BPModel):
     
     class Meta:
         verbose_name_plural = "Properties"
+
+class PropertyPhoto(BPModel):
+    """Property photo model."""
+
+    property = models.ForeignKey(Property, on_delete=models.CASCADE) 
+    name = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='photos')
+
+    def __str__(self):
+        """Return name and property."""
+        return '{} by @{}'.format(self.name, self.property)
