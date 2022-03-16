@@ -5,7 +5,7 @@ from .base import env
 
 # Base
 SECRET_KEY = env('DJANGO_SECRET_KEY')
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['beaplusbank.com'])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['raiatech.com'])
 
 # Databases
 DATABASES['default'] = env.db('DATABASE_URL')  # NOQA
@@ -70,7 +70,7 @@ SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[beaplus Bank]')
 
 # Admin
-ADMIN_URL = env('DJANGO_ADMIN_URL')
+#ADMIN_URL = env('DJANGO_ADMIN_URL')
 
 # Anymail (Mailgun)
 INSTALLED_APPS += ['anymail']  # noqa F405

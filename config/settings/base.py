@@ -8,7 +8,8 @@ APPS_DIR = ROOT_DIR.path('beaplus')
 env = environ.Env()
 
 # Base
-DEBUG = env.bool('DJANGO_DEBUG', False)
+#DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG=True
 
 # Language and timezone
 TIME_ZONE = 'Europe/Madrid'
